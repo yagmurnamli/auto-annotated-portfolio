@@ -1,7 +1,7 @@
 ---
 type: ProjectLayout
 title: PARALLAX
-colors: colors-a
+colors: colors-c
 date: '2021-12-20'
 client: Awesome client
 description: >-
