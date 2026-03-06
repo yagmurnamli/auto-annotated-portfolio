@@ -46,14 +46,19 @@ sections:
         label: See all projects
         url: /projects
     showDate: false
-    showDescription: true
+    showDescription: false
     showFeaturedImage: true
-    showReadMoreLink: true
-    variant: variant-b
+    showReadMoreLink: false
+    variant: variant-e
     projects:
       - content/pages/projects/project-two.md
       - content/pages/projects/project-three.md
       - content/pages/projects/project-one.md
+      - content/pages/projects/project-two.md
+      - content/pages/projects/project-one.md
+      - content/pages/projects/project-three.md
+      - content/pages/projects/project-one.md
+      - content/pages/projects/project-two.md
     styles:
       self:
         height: auto
@@ -63,7 +68,7 @@ sections:
           - pb-24
           - pl-4
           - pr-4
-        textAlign: left
+        textAlign: center
     subtitle: Projects
   - type: FeaturedPostsSection
     elementId: ''

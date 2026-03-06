@@ -65,6 +65,54 @@ function ProjectGrid(props) {
         return null;
     }
     const TitleTag = headingLevel;
+
+    if (variant === 'variant-e') {
+        const offsets = [
+            { x: 0, y: 0, rotate: 0 },
+            { x: 18, y: 30, rotate: 0 },
+            { x: -12, y: -18, rotate: 0 },
+            { x: 28, y: 10, rotate: 0 },
+            { x: -22, y: 26, rotate: 0 },
+            { x: 10, y: -28, rotate: 0 },
+            { x: -18, y: 22, rotate: 0 },
+            { x: 24, y: -14, rotate: 0 },
+        ];
+        return (
+            <div
+                className={classNames('flex flex-wrap justify-center gap-12 sm:gap-16 max-w-4xl mx-auto py-8', {
+                    'mt-12': hasTopMargin
+                })}
+            >
+                {projects.map((project, index) => {
+                    const offset = offsets[index % offsets.length];
+                    return (
+                        <Link
+                            key={index}
+                            href={project}
+                            className="flex flex-col items-center text-center group w-20 sm:w-24"
+                            style={{
+                                transform: `translate(${offset.x}px, ${offset.y}px) rotate(${offset.rotate}deg)`,
+                                transition: 'transform 0.3s ease',
+                            }}
+                        >
+                            {showFeaturedImage && project.featuredImage && (
+                                <div className="w-16 h-16 sm:w-20 sm:h-20 overflow-hidden rounded-[22%] shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1">
+                                    <ImageBlock
+                                        {...project.featuredImage}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                            )}
+                            <TitleTag className="mt-2 text-xs sm:text-sm font-medium leading-tight">
+                                {project.title}
+                            </TitleTag>
+                        </Link>
+                    );
+                })}
+            </div>
+        );
+    }
+
     return (
         <div
             className={classNames('grid gap-y-12', {
